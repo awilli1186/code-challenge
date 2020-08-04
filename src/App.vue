@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Allday logo" src="./assets/allday-logo.svg" />
+    <Header />
   </div>
 </template>
 
 <script>
-// Add component imports here
+import Header from "./components/Header.vue";
 
 export default {
   name: "App",
   components: {
+    Header
   },
 };
+
 </script>
 
 <style lang="scss">

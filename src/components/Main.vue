@@ -7,7 +7,7 @@
 // Add component imports here
 
 export default {
-  name: "App",
+  name: "Main",
   components: {
   },
 };

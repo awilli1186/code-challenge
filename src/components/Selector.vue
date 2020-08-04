@@ -7,9 +7,7 @@
 // Add component imports here
 
 export default {
-  name: "App",
-  components: {
-  },
+  name: "Selector",
 };
 </script>
 
