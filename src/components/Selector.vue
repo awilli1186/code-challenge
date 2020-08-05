@@ -1,37 +1,37 @@
 <template>
-  <div id="selector">
-      <h2 class="heading">1. Choose a Fabric</h2>
-      <p class="description">Choose your choice from fabrics to leather.</p>
-      <div class="fabrics">
-        <h3 class="fabrics-heading">Fabric Choices</h3>
-        <div class="fabrics-inner">
-            <button class="fabrics-button" :class="{'-active': activeIndex === 0}" @click="onClickButton(0)">
-                <img class="fabrics-image" src="../assets/sofa/sofa-amber.jpg" alt="amber sofa button">
-                <span class="fabrics-name">Amber</span>
-            </button>
-            <button class="fabrics-button" :class="{'-active': activeIndex === 1}" @click="onClickButton(1)">
-                <img class="fabrics-image" src="../assets/sofa/sofa-charcoal.jpg" alt="charcoal sofa button">
-                <span class="fabrics-name">Charcoal</span>
-            </button>
-            <button class="fabrics-button" :class="{'-active': activeIndex === 2}" @click="onClickButton(2)">
-                <img class="fabrics-image" src="../assets/sofa/sofa-red.jpg" alt="red sofa button">
-                <span class="fabrics-name">Red</span>
-            </button>
+    <div id="selector">
+        <h2 class="heading">1. Choose a Fabric</h2>
+        <p class="description">Choose your choice from fabrics to leather.</p>
+        <div class="fabrics">
+            <h3 class="fabrics-heading">Fabric Choices</h3>
+            <div class="fabrics-inner">
+                <button class="fabrics-button" :class="{'-active': activeIndex === 0}" @click="onClickButton(0)">
+                    <img class="fabrics-image" src="../assets/sofa/sofa-amber.jpg" alt="amber sofa button">
+                    <span class="fabrics-name">Amber</span>
+                </button>
+                <button class="fabrics-button" :class="{'-active': activeIndex === 1}" @click="onClickButton(1)">
+                    <img class="fabrics-image" src="../assets/sofa/sofa-charcoal.jpg" alt="charcoal sofa button">
+                    <span class="fabrics-name">Charcoal</span>
+                </button>
+                <button class="fabrics-button" :class="{'-active': activeIndex === 2}" @click="onClickButton(2)">
+                    <img class="fabrics-image" src="../assets/sofa/sofa-red.jpg" alt="red sofa button">
+                    <span class="fabrics-name">Red</span>
+                </button>
+            </div>
         </div>
-      </div>
-  </div>
+    </div>
 </template>
 
 <script>
 
 export default {
-  name: "Selector",
-  props: ["activeIndex"],
-  methods: {
-    onClickButton (index) {
-       this.$emit('update-active', index)
+    name: "Selector",
+    props: ["activeIndex"],
+    methods: {
+        onClickButton (index) {
+        this.$emit('update-active', index)
+        }
     }
-  }
 };
 </script>
 
@@ -65,11 +65,11 @@ export default {
 }
 
 .fabrics-button {
-    cursor: pointer;
-    background-color: $mediumGray;
     background-clip: padding-box;
+    background-color: $mediumGray;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
     padding: 0;
     width: 30%;
 
