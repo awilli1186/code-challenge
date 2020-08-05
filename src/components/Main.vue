@@ -164,10 +164,14 @@ export default {
 }
 
 .saveLink-link {
-    border-bottom: 3px solid $blue;
+    border-bottom: 3px none $lightBlue;
     color: $black;
     font-family: $headline;
     text-decoration: none;
+
+    &:hover {
+        border-bottom: 3px solid $lightBlue;
+    }
 }
 
 .shipping {
