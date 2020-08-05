@@ -23,7 +23,6 @@ export default {
       this.isActive = active;
     }
   }
-
 };
 </script>
 
