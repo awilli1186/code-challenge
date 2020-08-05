@@ -1,15 +1,15 @@
 <template>
   <div id="header">
     <header class="navigation">
-      <showAt breakpoint="mediumAndBelow">
+      <show-at breakpoint="mediumAndBelow">
         <button class="mobile-menu" v-on:click="openMenu">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAP0lEQVRoge3WIQ4AIBADsIP//xk0CYaEMEErpza3KgAgp22y8bzFmaVzT7W4xQAASPKF0gwAgCRfKM0AAOBnEzhSAxbF826PAAAAAElFTkSuQmCC"
           />
           <span class="u-hide">Menu</span>
         </button>
-      </showAt>
-      <showAt breakpoint="largeAndAbove">
+      </show-at>
+      <show-at breakpoint="large">
         <div class="headerMenu">
           <div class="headerMenu-item">
             <a href="/" class="headerMenu-link">The Sofa</a>
@@ -21,11 +21,11 @@
             <a href="/" class="headerMenu-link">About Us</a>
           </div>
         </div>
-      </showAt>
+      </show-at>
       <a href="/" class="headerLogo">
-        <img class="headerLogo-img" alt="Allday logo" src="../assets/allday-logo.svg" />
+        <img svg-inline class="headerLogo-image" alt="Allday logo" src="../assets/allday-logo.svg" />
       </a>
-      <showAt breakpoint="largeAndAbove">
+      <show-at breakpoint="large">
         <div class="headerMenu">
           <div class="headerMenu-item -right">
             <a href="/" class="headerMenu-link">Showroom</a>
@@ -34,11 +34,11 @@
             <a href="/" class="headerMenu-link">Swatches</a>
           </div>
         </div>
-      </showAt>
+      </show-at>
     </header>
-    <showAt breakpoint="mediumAndBelow">
+    <show-at breakpoint="mediumAndBelow">
       <MobileMenu :is-active="isActive" />
-    </showAt>
+    </show-at>
   </div>
 </template>
 
@@ -58,12 +58,17 @@ export default {
   methods: {
     openMenu: function () {
       this.isActive ? (this.isActive = false) : (this.isActive = true);
+      this.$emit('menu-open', this.isActive);
     },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+#header {
+  margin-bottom: 2.25rem;
+}
+
 .navigation {
   padding: 2rem;
   position: relative;
@@ -82,8 +87,12 @@ export default {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  width: 40%;
+  width: 45%;
   max-width: 20rem;
+}
+
+.headerLogo-image {
+    width: 100%;
 }
 
 .headerMenu {
