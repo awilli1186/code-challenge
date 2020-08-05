@@ -1,5 +1,5 @@
 <template>
-  <div id="mobileMenu" v-bind:class="{active: isActive}">
+  <div id="mobileMenu" :class="{active: isActive}">
     <div class="mobileMenu-element">
       <a href="/" class="mobileMenu-link">The Sofa</a>
     </div>
@@ -25,8 +25,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #mobileMenu {
+  background-color: $background;
   border-top: 1px solid $gray;
   height: 100vh;
   overflow-y: auto;
@@ -37,6 +38,7 @@ export default {
   transform: translateX(-100%);
   transition: transform 0.4s ease-in;
   width: 100vw;
+  z-index: 2;
 }
 
 #mobileMenu.active {
