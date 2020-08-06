@@ -1,6 +1,8 @@
 # helix-code-challenge
 
-## Project setup
+Run `yarn install` to setup the project then run `yarn serve` to build it and view via http://localhost:8080/ 
+
+## Setup project
 ```
 yarn install
 ```
